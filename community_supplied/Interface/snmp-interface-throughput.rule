@@ -44,7 +44,11 @@ healthbot {
                 description "Interfaces SNMP sensor to data from network device";
                 snmp {
                     table IF-MIB::ifXTable;
+<<<<<<< HEAD
                     frequency 180s;
+=======
+                    frequency 60s;
+>>>>>>> 103a635320204399ff37392fb3c144a229c3a701
                 }
             }
             field if-speed {
@@ -119,6 +123,7 @@ healthbot {
             /*
             * Fields defined using formulae by user-defined function
             */
+<<<<<<< HEAD
             field dt-in-bw-util {
                 formula {
                     anomaly-detection {
@@ -143,6 +148,8 @@ healthbot {
                 type integer;
                 description "ML anomaly detection output bandwidth utilization field";
             }
+=======
+>>>>>>> 103a635320204399ff37392fb3c144a229c3a701
             field out-bw-util {
                 formula {
                     eval {
@@ -216,6 +223,7 @@ healthbot {
                     then {
                         status {
                             color red;
+<<<<<<< HEAD
                             message "$interface-name input throughput utilization ($in-bw-util %) crossed threshold value ($threshold %). Mbps:$in-mbps Input-bytes:$input-bytes";
                         }
                     }
@@ -232,6 +240,9 @@ healthbot {
                         status {
                             color yellow;
                             message "$interface-name input bandwidth utilization ($in-bw-util %) is above the dynamic threshold. Mbps:$in-mbps Input-bytes:$input-bytes";                     
+=======
+                            message "$interface-name input throughput utilization ($in-bw-util %) crossed threshold value ($threshold %). Mbps:$in-mbps Bps:$input-bytes bps";
+>>>>>>> 103a635320204399ff37392fb3c144a229c3a701
                         }
                     }
                 }
@@ -242,7 +253,11 @@ healthbot {
                     then {
                         status {
                             color green;
+<<<<<<< HEAD
                             message "$interface-name input throughput utilization ($in-bw-util %) is normal. Mbps:$in-mbps Input-bytes:$input-bytes";
+=======
+                            message "$interface-name input throughput utilization ($in-bw-util %) is normal. Mbps:$in-mbps Bps:$input-bytes bps ";
+>>>>>>> 103a635320204399ff37392fb3c144a229c3a701
                         }
                     }
                 }
@@ -263,6 +278,7 @@ healthbot {
                     then {
                         status {
                             color red;
+<<<<<<< HEAD
                             message "$interface-name output throughput utilization($out-bw-util%) crossed threshold value ($threshold %). Mbps:$out-mbps Input-bytes:$output-bytes";
                         }
                     }
@@ -279,6 +295,9 @@ healthbot {
                         status {
                             color yellow;
                             message "$interface-name output throughput utilization ($out-bw-util %) is above the dynamic threshold. Mbps:$out-mbps Output-bytes:$output-bytes";               
+=======
+                            message "$interface-name output throughput utilization($out-bw-util%) crossed threshold value ($threshold %). Mbps:$out-mbps Bps:$output-bytes bps";
+>>>>>>> 103a635320204399ff37392fb3c144a229c3a701
                         }
                     }
                 }
@@ -289,7 +308,11 @@ healthbot {
                     then {
                         status {
                             color green;
+<<<<<<< HEAD
                             message "$interface-name output throughput utilization ($out-bw-util %) is normal. Mbps:$out-mbps Input-bytes:$output-bytes";
+=======
+                            message "$interface-name output throughput utilization ($out-bw-util %) is normal. Mbps:$out-mbps Bps:$output-bytes bps";
+>>>>>>> 103a635320204399ff37392fb3c144a229c3a701
                         }
                     }
                 }
@@ -300,7 +323,11 @@ healthbot {
             */
             variable interface-name-variable {
                 value .*;
+<<<<<<< HEAD
                 description "Enter interface name in regex i.e. ge-.*";
+=======
+                description "Interfaces to be monitored";
+>>>>>>> 103a635320204399ff37392fb3c144a229c3a701
                 type string;
             }
             variable threshold {
